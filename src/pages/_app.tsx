@@ -1,14 +1,15 @@
-import "../styles/globals.css";
+import "src/styles/globals.css";
+import type { AppProps } from "next/app";
 import Head from "next/head";
 
-function MyApp({ Component, pageProps }) {
+function MyApp(props: AppProps) {
   return (
     <>
       <Head>
         <title>Bubekiti Blog</title>
         <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet" />
       </Head>
-      <Component {...pageProps} />
+      <props.Component {...props.pageProps} />
     </>
   );
 }

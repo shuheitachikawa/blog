@@ -1,13 +1,13 @@
 import Link from "next/link";
-import type { VFC } from "react";
+import type { CSSProperties, VFC } from "react";
 
 const items = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
 ];
 
-const h1Style = {
-  "font-family": "'Secular One', sans-serif;",
+const h1Style :CSSProperties = {
+  fontFamily: "'Secular One', sans-serif;"
 };
 
 export const Header: VFC = () => {

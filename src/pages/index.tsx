@@ -1,9 +1,9 @@
 import { NextPage } from "next";
 import Link from "next/link";
 // import type { VFC } from "react";
-import { axiosInstance } from "../lib/api";
-import { Post } from "../types";
-import { Layout } from "../components/layout";
+import { axiosInstance } from "src/lib/api";
+import { Post } from "src/types";
+import { Layout } from "src/components/layout";
 
 type Props = {
   posts: Post[];
@@ -30,7 +30,6 @@ const Home: NextPage<Props> = ({ posts }) => {
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
   const { data } = await axiosInstance.get(`https://bubekiti.microcms.io/api/v1/blog`);
-  console.log(data.contents);
   const posts: Post[] = await data.contents;
   return {
     props: {

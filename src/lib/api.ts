@@ -1,9 +1,9 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const axiosInstance = axios.create({
-  method: 'get',
+  method: "get",
   headers: {
-    'Content-Type': 'application/json',
-    'X-API-KEY': 'b99a477f-fdaa-43e0-8a72-de34af047371',
+    "Content-Type": "application/json",
+    "X-API-KEY": process.env.MICROCMS_API_KEY,
   },
 });
