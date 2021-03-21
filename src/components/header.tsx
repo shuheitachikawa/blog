@@ -6,11 +6,20 @@ const items = [
   { href: "/about", label: "About" },
 ];
 
+const h1Style = {
+  "font-family": "'Secular One', sans-serif;",
+};
+
 export const Header: VFC = () => {
   return (
-    <header>
-      <h1>Title</h1>
-      <nav>
+    <header className="h-20">
+      <div className="max-w-screen-lg mx-auto h-full flex items-center">
+        <Link href="/">
+          <h1 className="text-lightBlue text-4xl font-semibold cursor-pointer" style={h1Style}>
+            Bubekiti Blog
+          </h1>
+        </Link>
+        {/* <nav>
         {items.map(({ href, label }) => {
           return (
             <Link key={href} href={href}>
@@ -18,7 +27,8 @@ export const Header: VFC = () => {
             </Link>
           );
         })}
-      </nav>
+      </nav> */}
+      </div>
     </header>
   );
 };

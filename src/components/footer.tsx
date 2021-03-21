@@ -3,7 +3,9 @@ import type { VFC } from "react";
 export const Footer: VFC = () => {
   return (
     <footer>
-      <small>&copy; 20xx example</small>
+      <div className="max-w-screen-lg mx-auto">
+        <small>&copy; 20xx example</small>
+      </div>
     </footer>
   );
 };
