@@ -13,14 +13,19 @@ const BlogId: NextPage<Props> = ({ post }) => {
   return (
     <Layout>
       <div className="max-w-main bg-white text-black">
-        <div className={styles.postBg}>
-          <p className="text-8xl">😏</p>
+        <div className="sm:h-60 h-40">
+          <div className={styles.postBg}>
+            <p className="sm:text-8xl text-7xl">{post.icon}</p>
+          </div>
         </div>
-        <div className="py-7 px-10">
+        <div className="sm:py-7 sm:px-10 py-8 px-5">
           <time className="text-sm text-sub">{dayjs(post.publishedAt).format("YYYY.MM.DD")}</time>
-          <h1 className="text-3xl font-bold mt-2 mb-3">{post.title}</h1>
-          <div className="mb-6">
-            <span className="text-white text-xs py-1 px-2 bg-red rounded-md">DEV</span>
+          <h1 className="sm:text-3xl text-2xl font-bold mt-2 sm:mb-3 mb-2">{post.title}</h1>
+          <div className="mb-6 text-white">
+            {post.category[0] === "DEV" && <span className="text-xs py-1 px-2 bg-dev rounded-md">{post.category}</span>}
+            {post.category[0] === "LIFE" && (
+              <span className="text-xs py-1 px-2 bg-life rounded-md">{post.category}</span>
+            )}
           </div>
           <div
             className={styles.post}
@@ -36,7 +41,7 @@ const BlogId: NextPage<Props> = ({ post }) => {
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
-  const { data } = await axiosInstance.get(`https://bubekiti.microcms.io/api/v1/blog`);
+  const { data } = await axiosInstance.get(`${process.env.MICROCMS_BASE_URL}/blog`);
   const paths = data.contents.map((content: Post) => `/${content.id}`);
   return { paths, fallback: false };
 };
@@ -44,7 +49,7 @@ export const getStaticPaths = async () => {
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context: any) => {
   const id = context.params.id;
-  const { data } = await axiosInstance.get(`https://bubekiti.microcms.io/api/v1/blog/${id}`);
+  const { data } = await axiosInstance.get(`${process.env.MICROCMS_BASE_URL}/blog/${id}`);
   const post: Post = await data;
   return {
     props: {

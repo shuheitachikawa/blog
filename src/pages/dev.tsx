@@ -23,7 +23,7 @@ const Home: NextPage<Props> = ({ posts }) => {
                 <Link href={`/${blog.id}`}>
                   <div className="flex items-start py-5 border-t border-sub hover:bg-sub transition cursor-pointer">
                     <div className="bg-sub rounded-md flex items-center justify-center w-20 h-20 mr-5">
-                      <p className="text-5xl">😏aa</p>
+                      <p className="text-5xl">{blog.icon}</p>
                     </div>
                     <div className="flex flex-col">
                       <h3 className="text-2xl font-bold mb-1">{blog.title}</h3>
@@ -31,7 +31,12 @@ const Home: NextPage<Props> = ({ posts }) => {
                         {dayjs(blog.publishedAt).format("YYYY.MM.DD")}
                       </time>
                       <div className="">
-                        <span className="text-xs py-1 px-2 bg-red rounded-md">DEV</span>
+                        {blog.category[0] === "DEV" && (
+                          <span className="text-xs py-1 px-2 bg-dev rounded-md">{blog.category}</span>
+                        )}
+                        {blog.category[0] === "LIFE" && (
+                          <span className="text-xs py-1 px-2 bg-life rounded-md">{blog.category}</span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -47,8 +52,9 @@ const Home: NextPage<Props> = ({ posts }) => {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  const { data } = await axiosInstance.get(`https://bubekiti.microcms.io/api/v1/blog`);
+  const { data } = await axiosInstance.get(`https://bubekitiblog.microcms.io/api/v1/blog`);
   const posts: Post[] = await data.contents;
+  console.log(posts[0].category);
   return {
     props: {
       posts,

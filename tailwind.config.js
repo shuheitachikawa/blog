@@ -11,7 +11,8 @@ module.exports = {
       white: "#fff",
       main: "#1D1E36",
       sub: "#28294A",
-      red: "red",
+      dev: "#ff844d",
+      life: '#0a4300',
     }),
     borderColor: (theme) => ({
       ...theme("colors"),
