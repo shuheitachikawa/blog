@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import Link from "next/link";
-// import type { VFC } from "react";
 import { axiosInstance } from "src/lib/api";
 import { Post } from "src/types";
 import { Layout } from "src/components/layout";

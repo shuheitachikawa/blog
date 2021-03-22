@@ -4,6 +4,7 @@ import { Post } from "src/types";
 import { Layout } from "src/components/layout";
 import { Categories } from "src/components/categories";
 import { Posts } from "src/components/posts";
+import Head from "src/components/head";
 
 type Props = {
   posts: Post[];
@@ -11,14 +12,23 @@ type Props = {
 
 const Home: NextPage<Props> = ({ posts }) => {
   return (
-    <Layout>
-      <div className="text-white max-w-main">
-        <Categories />
-        <div className="mx-4">
-          <Posts posts={posts} />
+    <>
+      <Head
+        title={"Bubekiti Blog"}
+        description={"Bubekitiのブログ。フロントエンドメインのエンジニア。PiTARI(ピタリ)を開発中。"}
+        keyword={"Bubekiti PiTARI"}
+        image={"/cat.jpg"}
+        url={"https://bubekiti.com"}
+      />
+      <Layout>
+        <div className="text-white max-w-main">
+          <Categories />
+          <div className="mx-4">
+            <Posts posts={posts} />
+          </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 

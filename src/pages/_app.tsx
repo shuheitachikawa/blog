@@ -2,6 +2,10 @@ import "src/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+library.add(fab); //あらかじめ使用するアイコンを追加しておく
+
 function MyApp(props: AppProps) {
   return (
     <>
@@ -15,21 +19,3 @@ function MyApp(props: AppProps) {
 }
 
 export default MyApp;
-
-// import "src/styles/globals.css";
-
-// import type { AppProps } from "next/app";
-// import Head from "next/head";
-
-// const App = (props: AppProps) => {
-//   return (
-//     <>
-//       <Head>
-//         <title>nexst</title>
-//       </Head>
-//       <props.Component {...props.pageProps} />
-//     </>
-//   );
-// };
-
-// export default App;
