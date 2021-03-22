@@ -13,7 +13,7 @@ const BlogId: NextPage<Props> = ({ post }) => {
   return (
     <Layout>
       <div className="max-w-main bg-white text-black">
-        <div className="bg-sub h-60 flex justify-center items-center">
+        <div className={styles.postBg}>
           <p className="text-8xl">😏</p>
         </div>
         <div className="py-7 px-10">
@@ -23,8 +23,7 @@ const BlogId: NextPage<Props> = ({ post }) => {
             <span className="text-white text-xs py-1 px-2 bg-red rounded-md">DEV</span>
           </div>
           <div
-            className="post"
-            style={styles}
+            className={styles.post}
             dangerouslySetInnerHTML={{
               __html: `${post.content}`,
             }}

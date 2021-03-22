@@ -4,7 +4,7 @@ import { Icon } from "src/components/icon";
 
 export const Aside: VFC = () => {
   return (
-    <aside className="bg-sub text-white shadow-lg rounded-md p-6 max-w-aside sticky">
+    <aside className="bg-sub text-white shadow-lg rounded-md p-6 max-w-aside sticky top-8">
       <div className="flex items-center mb-4">
         <Icon size={70} />
         <h2 className="text-xl ml-3 font-bold">Bubekiti</h2>
