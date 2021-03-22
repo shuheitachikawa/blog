@@ -29,11 +29,11 @@ function MyApp({ title, description, keyword, image, url }: Props) {
         <link rel="canonical" href={url} />
         <link
           rel="shortcut icon"
-          href={"/cat.jpg"}
+          href={"https://bubekiti.com/cat.jpg"}
         />
         <link
           rel="apple-touch-icon"
-          href={"/cat.jpg"}
+          href={"https://bubekiti.com/cat.jpg"}
         />
       </Head>
     </>
