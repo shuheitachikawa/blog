@@ -34,7 +34,7 @@ const Home: NextPage<Props> = ({ posts }) => {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  const { data } = await axiosInstance.get(`${process.env.MICROCMS_BASE_URL}/blog?filters=category[contains]DEV`);
+  const { data } = await axiosInstance.get(`${process.env.MICROCMS_BASE_URL}/blog?filters=category[contains]LIFE`);
   const posts: Post[] = await data.contents;
   return {
     props: {
