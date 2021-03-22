@@ -11,7 +11,7 @@ export const Posts: VFC<Props> = (props) => {
   return (
     <ul>
       {props.posts.map((blog) => (
-        <li key={blog.id}>
+        <li key={blog.id} className="select-none">
           <Link href={`/${blog.id}`}>
             <div className="flex items-start sm:py-5 py-3 border-t border-sub hover:bg-sub transition cursor-pointer">
               <div className="bg-sub rounded-md flex items-center justify-center sm:w-20 sm:h-20 h-16 w-16 min-w-max sm:mr-5 mr-3">
