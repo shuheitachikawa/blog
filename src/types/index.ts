@@ -9,3 +9,8 @@ export type Post = {
   content: string;
   publishedAt: string;
 };
+
+export type Category = {
+  name: string;
+  href: string;
+};

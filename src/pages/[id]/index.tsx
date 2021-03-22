@@ -3,6 +3,7 @@ import styles from "src/styles/Home.module.scss";
 import { Post } from "src/types";
 import { axiosInstance } from "src/lib/api";
 import { Layout } from "src/components/layout";
+import dayjs from "dayjs";
 
 type Props = {
   post: Post;
@@ -11,14 +12,25 @@ type Props = {
 const BlogId: NextPage<Props> = ({ post }) => {
   return (
     <Layout>
-      <h1 className={styles.title}>{post.title}</h1>
-      <p className={styles.publishedAt}>{post.publishedAt}</p>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${post.content}`,
-        }}
-        className={styles.post}
-      />
+      <div className="max-w-main bg-white text-black">
+        <div className="bg-sub h-60 flex justify-center items-center">
+          <p className="text-8xl">😏</p>
+        </div>
+        <div className="py-7 px-10">
+          <time className="text-sm text-sub">{dayjs(post.publishedAt).format("YYYY.MM.DD")}</time>
+          <h1 className="text-3xl font-bold mt-2 mb-3">{post.title}</h1>
+          <div className="mb-6">
+            <span className="text-white text-xs py-1 px-2 bg-red rounded-md">DEV</span>
+          </div>
+          <div
+            className="post"
+            style={styles}
+            dangerouslySetInnerHTML={{
+              __html: `${post.content}`,
+            }}
+          />
+        </div>
+      </div>
     </Layout>
   );
 };
@@ -26,7 +38,7 @@ const BlogId: NextPage<Props> = ({ post }) => {
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
   const { data } = await axiosInstance.get(`https://bubekiti.microcms.io/api/v1/blog`);
-  const paths = data.contents.map((content: Post) => `/blog/${content.id}`);
+  const paths = data.contents.map((content: Post) => `/${content.id}`);
   return { paths, fallback: false };
 };
 
