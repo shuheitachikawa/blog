@@ -14,7 +14,7 @@ export const Posts: VFC<Props> = (props) => {
         <li key={blog.id}>
           <Link href={`/${blog.id}`}>
             <div className="flex items-start sm:py-5 py-3 border-t border-sub hover:bg-sub transition cursor-pointer">
-              <div className="bg-sub rounded-md flex items-center justify-center sm:w-20 sm:h-20 h-16 w-16 sm:mr-5 mr-3">
+              <div className="bg-sub rounded-md flex items-center justify-center sm:w-20 sm:h-20 h-16 w-16 min-w-max sm:mr-5 mr-3">
                 <p className="sm:text-5xl text-4xl">{blog.icon}</p>
               </div>
               <div className="flex flex-col">
