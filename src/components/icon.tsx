@@ -6,12 +6,13 @@ const svgStyle: CSSProperties = {
   left: "0",
 };
 
-export const Icon: VFC<{ size: number }> = (props) => {
+
+export const Icon: VFC<{ size: number; href: string }> = (props) => {
   return (
     <>
       <svg width={props.size} height={props.size} viewBox="0 0 128 128">
         <image
-          href="/bubekiti.jpg"
+          href={props.href}
           width="100%"
           height="100%"
           preserveAspectRatio="xMidYMid slice"
