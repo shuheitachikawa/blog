@@ -19,7 +19,7 @@ const BlogId: NextPage<Props> = ({ post }) => {
         title={post.title}
         description={post.description}
         keyword={`Bubekiti PiTARI ${post.title} ${post.description}`}
-        image={"/cat.jpg"}
+        image={"https://bubekiti.com/cat.jpg"}
         url={`https://bubekiti.com/${post.id}`}
       />
       <Layout>
