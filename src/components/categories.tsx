@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { CSSProperties, VFC } from "react";
+import type { VFC } from "react";
 import { useRouter } from "next/router";
 import { Category } from "src/types";
 import { Icon } from "src/components/icon";

@@ -5,7 +5,7 @@ import { GA_TRACKING_ID } from "src/lib/gtag";
 export default class extends Document {
   render() {
     return (
-      <html lang="ja" className="bg-main">
+      <html lang="ja">
         <Head
           title={"Bubekiti Blog"}
           description={"Bubekitiのブログ。フロントエンドメインのエンジニア。PiTARI(ピタリ)を開発中。"}
@@ -28,7 +28,7 @@ export default class extends Document {
             }}
           />
         </Head>
-        <body>
+        <body className="bg-main">
           <Main />
           <NextScript />
         </body>
