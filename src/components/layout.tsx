@@ -11,7 +11,6 @@ export const Layout: VFC<{ children: ReactNode }> = (props) => {
   return (
     <div className="min-h-screen flex flex-col max-width font-main bg-main">
       <Header />
-      <Categories />
       <div className="container sm:flex items-start max-w-layout mx-auto sm:pt-8 pt-0 pb-10">
         <div className="flex-1">
           {!isPostPage && <Categories />}
