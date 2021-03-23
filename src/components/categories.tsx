@@ -18,7 +18,7 @@ export const Categories: VFC = () => {
         {categories.map((category) => (
           <Link href={category.href} key={category.href}>
             <div
-              className={`sm:w-20 sm:h-20 w-16 h-16 rounded-full overflow-hidden flex justify-center sm:mr-5 mr-3 cursor-pointer ${
+              className={`sm:w-20 sm:h-20 w-16 h-16 rounded-full select-none flex justify-center sm:mr-5 mr-3 cursor-pointer ${
                 routeName !== category.href && "opacity-60 shadow-lg"
               } duration-300 items-center ${category.bg}`}
             >

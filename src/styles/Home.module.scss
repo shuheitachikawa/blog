@@ -6,6 +6,12 @@
     border-bottom: 1px solid #ddd;
   }
 
+  & > h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 16px 0;
+  }
+
   & > p {
     line-height: 1.8;
     letter-spacing: 0.2px;
