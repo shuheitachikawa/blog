@@ -23,8 +23,9 @@ export const Categories: VFC = () => {
             className={`mr-5 cursor-pointer ${routeName !== category.href && "opacity-60"} duration-300`}
           >
             <Link href={category.href}>
-              <div className="">
-                <Icon size={70} href={category.name} />
+              <div className={`sm:w-20 w-16 rounded-full overflow-hidden`}>
+                <img src={category.name} alt=""/>
+                {/* <Icon size={70} href={category.name} /> */}
               </div>
             </Link>
           </div>
