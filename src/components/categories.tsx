@@ -16,18 +16,15 @@ export const Categories: VFC = () => {
     <>
       <div className="flex sm:mb-8 sm:mt-0 mb-4 mt-4 px-4">
         {categories.map((category) => (
-          <div
-            key={category.href}
-            className={`sm:mr-5 mr-3 cursor-pointer ${routeName !== category.href && "opacity-60"} duration-300`}
-          >
-            <Link href={category.href}>
-              <div className={`sm:w-20 sm:h-20 w-16 h-16 rounded-full overflow-hidden flex justify-center items-center ${category.bg}`}>
-                <span className={`font-bold sm:text-xl text-lg ${category.color}`}>{category.text}</span>
-                {/* <img src={category.name} alt="" /> */}
-                {/* <Icon size={70} href={category.name} /> */}
-              </div>
-            </Link>
-          </div>
+          <Link href={category.href} key={category.href}>
+            <div
+              className={`sm:w-20 sm:h-20 w-16 h-16 rounded-full overflow-hidden flex justify-center sm:mr-5 mr-3 cursor-pointer ${
+                routeName !== category.href && "opacity-60 shadow-lg"
+              } duration-300 items-center ${category.bg}`}
+            >
+              <span className={`font-bold sm:text-xl text-lg ${category.color}`}>{category.text}</span>
+            </div>
+          </Link>
         ))}
       </div>
     </>
