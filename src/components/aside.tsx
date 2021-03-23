@@ -14,12 +14,12 @@ export const Aside: VFC = () => {
       </p>
       <div className="flex justify-center">
         <div className="w-10 mr-6">
-          <a href="https://twitter.com/bubekiti" target="_blank">
+          <a href="https://twitter.com/bubekiti" target="_blank" aria-label="Twitterへ" rel="noopener">
             <FontAwesomeIcon icon={["fab", "twitter"]} />
           </a>
         </div>
         <div className="w-10">
-          <a href="https://github.com/shuheitachikawa" target="_blank">
+          <a href="https://github.com/shuheitachikawa" target="_blank" aria-label="GitHubへ" rel="noopener">
             <FontAwesomeIcon icon={["fab", "github"]} />
           </a>
         </div>

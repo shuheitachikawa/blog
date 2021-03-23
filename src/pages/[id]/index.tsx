@@ -51,7 +51,11 @@ const BlogId: NextPage<Props> = ({ post }) => {
             <p className="text-center font-bold mb-2">SHARE</p>
             <div className="flex justify-center">
               <div className="w-10 mr-6">
-                <a href={`https://twitter.com/intent/tweet?url=https://bubekiti.com/${post.id}`} target="_blank">
+                <a
+                  href={`https://twitter.com/intent/tweet?url=https://bubekiti.com/${post.id}`}
+                  target="_blank"
+                  rel="noopener"
+                >
                   <FontAwesomeIcon icon={["fab", "twitter"]} />
                 </a>
               </div>
@@ -59,6 +63,7 @@ const BlogId: NextPage<Props> = ({ post }) => {
                 <a
                   href={`https://www.facebook.com/sharer/sharer.php?u=https://bubekiti.com/${post.id}`}
                   target="_blank"
+                  rel="noopener"
                 >
                   <FontAwesomeIcon icon={["fab", "facebook"]} />
                 </a>

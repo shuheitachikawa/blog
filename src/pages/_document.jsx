@@ -5,8 +5,14 @@ import { GA_TRACKING_ID } from "src/lib/gtag";
 export default class extends Document {
   render() {
     return (
-      <html>
-        <Head>
+      <html lang="ja" className="bg-main">
+        <Head
+          title={"Bubekiti Blog"}
+          description={"Bubekitiのブログ。フロントエンドメインのエンジニア。PiTARI(ピタリ)を開発中。"}
+          keyword={"Bubekiti PiTARI"}
+          image={"/cat.jpg"}
+          url={"https://bubekiti.com"}
+        >
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
           <script

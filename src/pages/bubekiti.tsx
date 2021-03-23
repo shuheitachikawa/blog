@@ -4,7 +4,7 @@ import { Aside } from "src/components/aside";
 
 const Bubekiti: NextPage = () => {
   return (
-    <div className="bg-main min-h-screen">
+    <div className="min-h-screen">
       <Header />
       <div className="pt-10 flex justify-center">
         <Aside />
