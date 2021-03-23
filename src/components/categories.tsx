@@ -18,9 +18,13 @@ export const Categories: VFC = () => {
     <>
       <div className="flex sm:mb-8 sm:mt-0 mb-4 mt-4 px-4">
         {categories.map((category) => (
+          // <div
+          //   key={category.href}
+          //   className={`sm:mr-5 mr-3 cursor-pointer ${routeName !== category.href && "opacity-60"} duration-300`}
+          // >
           <div
             key={category.href}
-            className={`sm:mr-5 mr-3 cursor-pointer ${routeName !== category.href && "opacity-60"} duration-300`}
+            className={`sm:mr-5 mr-3 cursor-pointer duration-300`}
           >
             <Link href={category.href}>
               <div className="sm:w-20 w-16 rounded-full overflow-hidden">
