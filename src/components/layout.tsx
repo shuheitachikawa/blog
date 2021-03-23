@@ -11,11 +11,11 @@ export const Layout: VFC<{ children: ReactNode }> = (props) => {
   return (
     <div className="min-h-screen flex flex-col max-width bg-main font-main">
       <Header />
-      <div className="container sm:flex items-start max-w-layout mx-auto sm:pt-8 pt-0 pb-0">
-        {!isPostPage && <Categories />}
-      </div>
-      <div className="container sm:flex items-start max-w-layout mx-auto pb-10">
-        <main className="flex-1">{props.children}</main>
+      <div className="container sm:flex items-start max-w-layout mx-auto sm:pt-8 pt-0 pb-10">
+        <div className="flex-1">
+          {!isPostPage && <Categories />}
+          <main className="">{props.children}</main>
+        </div>
         <Aside />
       </div>
       <Footer />
