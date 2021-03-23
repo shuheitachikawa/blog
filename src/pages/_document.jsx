@@ -23,7 +23,6 @@ export default class extends Document {
           />
         </Head>
         <body>
-          <script> </script>
           <Main />
           <NextScript />
         </body>
