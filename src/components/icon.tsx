@@ -6,7 +6,6 @@ const svgStyle: CSSProperties = {
   left: "0",
 };
 
-
 export const Icon: VFC<{ size: number; href: string }> = (props) => {
   return (
     <>

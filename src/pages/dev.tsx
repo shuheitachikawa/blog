@@ -2,7 +2,6 @@ import { NextPage } from "next";
 import { axiosInstance } from "src/lib/api";
 import { Post } from "src/types";
 import { Layout } from "src/components/layout";
-import { Categories } from "src/components/categories";
 import { Posts } from "src/components/posts";
 import Head from "src/components/head";
 
@@ -22,8 +21,8 @@ const Home: NextPage<Props> = ({ posts }) => {
       />
       <Layout>
         <div className="text-white max-w-main">
-          <Categories />
           <div className="mx-4">
+            <h2 className="text-lightBlue text-2xl font-bold mb-4">Develop</h2>
             <Posts posts={posts} />
           </div>
         </div>
