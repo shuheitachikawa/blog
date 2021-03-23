@@ -9,6 +9,18 @@
   & > p {
     line-height: 1.8;
     letter-spacing: 0.2px;
+    & a {
+      color: #ff844d;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  & > a {
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+    color: #ff844d;
   }
 
   & > ol {
