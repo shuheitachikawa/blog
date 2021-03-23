@@ -13,6 +13,9 @@ module.exports = {
       sub: "#28294A",
       dev: "#ff844d",
       life: "#0a4300",
+      mainl: "#9FA8DA",
+      devl: "#fff4ef",
+      lifel: "#80CBC4",
     }),
     borderColor: (theme) => ({
       ...theme("colors"),
@@ -24,8 +27,9 @@ module.exports = {
       white: "#fff",
       sub: "#28294A",
       black: "#333333",
+      main: "#1A237E",
       dev: "#ff844d",
-      life: "#0a4300",
+      life: "#004D40",
     },
     maxWidth: {
       layout: "1052px",

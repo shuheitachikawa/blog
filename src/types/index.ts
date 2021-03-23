@@ -11,4 +11,7 @@ export type Post = {
 export type Category = {
   name: string;
   href: string;
+  text: string;
+  color: string;
+  bg: string;
 };
