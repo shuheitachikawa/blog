@@ -21,7 +21,8 @@ export const Categories: VFC = () => {
           <div key={category.href} className={`sm:mr-5 mr-3 cursor-pointer  duration-300`}>
             <Link href={category.href}>
               <div className="sm:w-20 w-16 rounded-full overflow-hidden">
-                <img src={category.name} alt="" />
+                <p>a</p>
+                {/* <img src={category.name} alt="" /> */}
                 {/* <Icon size={70} href={category.name} /> */}
               </div>
             </Link>
