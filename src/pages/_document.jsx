@@ -6,13 +6,7 @@ export default class extends Document {
   render() {
     return (
       <html lang="ja">
-        <Head
-          title={"Bubekiti Blog"}
-          description={"Bubekitiのブログ。フロントエンドメインのエンジニア。PiTARI(ピタリ)を開発中。"}
-          keyword={"Bubekiti PiTARI"}
-          image={"/cat.jpg"}
-          url={"https://bubekiti.com"}
-        >
+        <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
           <script
