@@ -22,7 +22,7 @@ export default class extends Document {
             }}
           />
         </Head>
-        <body>
+        <body className="bg-main">
           <Main />
           <NextScript />
         </body>
