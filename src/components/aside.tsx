@@ -10,7 +10,7 @@ export const Aside: VFC = () => {
         <h2 className="text-xl ml-3 font-bold">Bubekiti</h2>
       </div>
       <p className="text-sm leading-5 mb-4">
-        フロントエンド中心のエンジニアです。エンジニア1年目です。スタートアップで働きつつ、自分でもサービスを作ったりしています。作ることが好きです。
+        フロントエンド中心のエンジニアです。スタートアップで働きつつ、自分でもサービスを作ったりしています。作ることが好きです。
       </p>
       <div className="flex justify-center">
         <div className="w-10 mr-6">
