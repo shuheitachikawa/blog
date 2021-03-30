@@ -18,6 +18,11 @@ export const Aside: VFC = () => {
             <FontAwesomeIcon icon={["fab", "twitter"]} />
           </a>
         </div>
+        <div className="w-10 mr-6">
+          <a href="https://www.instagram.com/bubekiti" target="_blank" aria-label="Twitterへ" rel="noopener">
+            <FontAwesomeIcon icon={["fab", "instagram"]} />
+          </a>
+        </div>
         <div className="w-10">
           <a href="https://github.com/shuheitachikawa" target="_blank" aria-label="GitHubへ" rel="noopener">
             <FontAwesomeIcon icon={["fab", "github"]} />
