@@ -35,8 +35,8 @@ export const Aside: React.FC = () => {
         {links.map((link) => {
           return (
             <div key={link.name} className="w-8 mr-6 last:mr-0">
-              <a href={link.href} target="_blank" aria-label={`${link.name}へ`} rel="noopener">
-                <FontAwesomeIcon icon={["fab", link.name as any]} />
+              <a href={link.href} target="_blank" aria-label={`${link.name}へ`} rel="noopener" className='w-full'>
+                <FontAwesomeIcon icon={["fab", link.name as any]} className='w-full' />
               </a>
             </div>
           );
