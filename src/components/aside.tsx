@@ -1,4 +1,4 @@
-import type { VFC } from "react";
+import React from "react";
 import { Icon } from "components/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -17,7 +17,7 @@ const links = [
   },
 ];
 
-export const Aside: VFC = () => {
+export const Aside: React.FC = () => {
   return (
     <aside className="bg-sub text-white shadow-lg rounded-md p-6 sm:max-w-aside sticky top-8 mt-10 sm:mt-0 mx-4">
       <div className="flex items-center mb-4">
