@@ -1,4 +1,4 @@
-import { NextPage, GetStaticProps } from "next";
+import { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 import styles from "styles/Home.module.scss";
 import { Post } from "types";
 import { axiosInstance } from "lib/api";
@@ -6,15 +6,12 @@ import { Layout } from "components/Layout";
 import dayjs from "dayjs";
 import Head from "components/Head";
 import Image from "next/image";
-import { ParsedUrlQuery } from 'node:querystring'
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import cheerio from "cheerio";
+import hljs from "highlight.js";
+import "highlight.js/styles/night-owl.css";
 
-type Props = {
-  post: Post;
-};
-
-const BlogId: NextPage<Props> = ({ post }) => {
+const BlogId: NextPage = ({ post, highlightedBody }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head
@@ -43,7 +40,7 @@ const BlogId: NextPage<Props> = ({ post }) => {
             <div
               className={styles.post}
               dangerouslySetInnerHTML={{
-                __html: `${post.content}`,
+                __html: `${highlightedBody}`,
               }}
             />
           </div>
@@ -83,18 +80,24 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-interface Params extends ParsedUrlQuery {
-  id: string
-}
-
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const id = params!.id;
   const { data } = await axiosInstance.get(`${process.env.MICROCMS_BASE_URL}/blog/${id}`);
   const post: Post = await data;
+
+  const $ = cheerio.load(post.content);
+
+  $("pre code").each((_, elm) => {
+    const result = hljs.highlightAuto($(elm).text());
+    $(elm).html(result.value);
+    $(elm).addClass("hljs");
+  });
+
   return {
     props: {
       post,
+      highlightedBody: $.html(),
     },
   };
 };
