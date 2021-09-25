@@ -1,4 +1,4 @@
-import type { CSSProperties, VFC } from "react";
+import React, { CSSProperties } from "react";
 
 const svgStyle: CSSProperties = {
   position: "absolute",
@@ -6,17 +6,16 @@ const svgStyle: CSSProperties = {
   left: "0",
 };
 
-export const Icon: VFC<{ size: number; href: string }> = (props) => {
+interface Props {
+  size: number;
+  href: string;
+}
+
+export const Icon: React.FC<Props> = ({ size, href }) => {
   return (
     <>
-      <svg width={props.size} height={props.size} viewBox="0 0 128 128">
-        <image
-          href={props.href}
-          width="100%"
-          height="100%"
-          preserveAspectRatio="xMidYMid slice"
-          clipPath="url(#clip01)"
-        />
+      <svg width={size} height={size} viewBox="0 0 128 128">
+        <image href={href} width="100%" height="100%" preserveAspectRatio="xMidYMid slice" clipPath="url(#clip01)" />
       </svg>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="0" height="0" style={svgStyle}>
         <clipPath id="clip01">
