@@ -26,7 +26,7 @@ const BlogId: NextPage = ({ post, highlightedBody }: InferGetStaticPropsType<typ
           <div>
             <Image src={post.image.url} alt={post.title} width={800} height={800 / 1.618} objectFit={"cover"} />
           </div>
-          <div className="sm:py-7 sm:px-8 py-8 px-5">
+          <div className="sm:py-7 sm:px-5 py-8 px-4">
             <time className="text-sm text-sub">{dayjs(post.publishedAt).format("YYYY.MM.DD")}</time>
             <h1 className="sm:text-3xl text-2xl font-bold mt-2 sm:mb-3 mb-2">{post.title}</h1>
             <div className="mb-6 text-white">
