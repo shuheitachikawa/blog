@@ -34,9 +34,9 @@ export const Aside: React.FC = () => {
       <div className="flex justify-center">
         {links.map((link) => {
           return (
-            <div key={link.name} className="w-10 mr-6 last:mr-0">
+            <div key={link.name} className="w-10 mr-4 last:mr-0">
               <a href={link.href} target="_blank" aria-label={`${link.name}へ`} rel="noopener">
-                <FontAwesomeIcon icon={["fab", link.name as any]} />
+                <FontAwesomeIcon icon={["fab", link.name as any]} width={26} />
               </a>
             </div>
           );
