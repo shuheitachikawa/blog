@@ -1,7 +1,7 @@
 import Link from "next/link";
-import type { CSSProperties, VFC } from "react";
+import React from "react";
 
-export const Header: VFC = () => {
+export const Header: React.VFC = () => {
   return (
     <header className="sm:h-16 h-14 shadow">
       <div className="max-w-layout mx-auto h-full flex items-center sm:justify-start justify-center">

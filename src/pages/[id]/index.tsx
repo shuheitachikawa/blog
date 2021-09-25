@@ -2,9 +2,9 @@ import { NextPage } from "next";
 import styles from "src/styles/Home.module.scss";
 import { Post } from "src/types";
 import { axiosInstance } from "src/lib/api";
-import { Layout } from "src/components/layout";
+import { Layout } from "src/components/Layout";
 import dayjs from "dayjs";
-import Head from "src/components/head";
+import Head from "src/components/Head";
 import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
