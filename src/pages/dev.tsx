@@ -1,9 +1,9 @@
 import { NextPage } from "next";
-import { axiosInstance } from "src/lib/api";
-import { Post } from "src/types";
-import { Layout } from "src/components/Layout";
-import { Posts } from "src/components/Posts";
-import Head from "src/components/Head";
+import { axiosInstance } from "lib/api";
+import { Post } from "types";
+import { Layout } from "components/Layout";
+import { Posts } from "components/Posts";
+import Head from "components/Head";
 
 type Props = {
   posts: Post[];

@@ -1,5 +1,5 @@
 import type { VFC } from "react";
-import { Icon } from "src/components/Icon";
+import { Icon } from "components/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Aside: VFC = () => {

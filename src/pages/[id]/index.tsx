@@ -1,11 +1,12 @@
-import { NextPage } from "next";
-import styles from "src/styles/Home.module.scss";
-import { Post } from "src/types";
-import { axiosInstance } from "src/lib/api";
-import { Layout } from "src/components/Layout";
+import { NextPage, GetStaticProps } from "next";
+import styles from "styles/Home.module.scss";
+import { Post } from "types";
+import { axiosInstance } from "lib/api";
+import { Layout } from "components/Layout";
 import dayjs from "dayjs";
-import Head from "src/components/Head";
+import Head from "components/Head";
 import Image from "next/image";
+import { ParsedUrlQuery } from 'node:querystring'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -82,9 +83,13 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
+interface Params extends ParsedUrlQuery {
+  id: string
+}
+
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context: any) => {
-  const id = context.params.id;
+export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
+  const id = params!.id;
   const { data } = await axiosInstance.get(`${process.env.MICROCMS_BASE_URL}/blog/${id}`);
   const post: Post = await data;
   return {

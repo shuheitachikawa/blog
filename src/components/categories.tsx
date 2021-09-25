@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { VFC } from "react";
 import { useRouter } from "next/router";
-import { Category } from "src/types";
+import { Category } from "types";
 
 const categories: Category[] = [
   { href: "/", name: "/new.png", text: "NEW", color: "text-main", bg: "bg-mainl" },

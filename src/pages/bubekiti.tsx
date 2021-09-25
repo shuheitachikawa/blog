@@ -1,6 +1,6 @@
 import { NextPage } from "next";
-import { Header } from "src/components/Header";
-import { Aside } from "src/components/Aside";
+import { Header } from "components/Header";
+import { Aside } from "components/Aside";
 
 const Bubekiti: NextPage = () => {
   return (

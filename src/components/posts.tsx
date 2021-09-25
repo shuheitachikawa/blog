@@ -1,5 +1,5 @@
 import type { VFC } from "react";
-import { Post } from "src/types";
+import { Post } from "types";
 import Link from "next/link";
 import dayjs from "dayjs";
 import Image from "next/image";

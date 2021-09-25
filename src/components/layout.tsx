@@ -1,9 +1,9 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { Footer } from "src/components/Footer";
-import { Header } from "src/components/Header";
-import { Aside } from "src/components/Aside";
-import { Categories } from "src/components/Categories";
+import { Footer } from "components/Footer";
+import { Header } from "components/Header";
+import { Aside } from "components/Aside";
+import { Categories } from "components/Categories";
 
 export const Layout: React.FC = ({ children }) => {
   const router = useRouter();
