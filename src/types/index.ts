@@ -1,6 +1,6 @@
 export type Post = {
   id: string;
-  icon: string;
+  image: Image;
   title: string;
   description: string;
   category: string;
@@ -15,3 +15,9 @@ export type Category = {
   color: string;
   bg: string;
 };
+
+type Image = {
+  url: string;
+  height: number;
+  width: number;
+}

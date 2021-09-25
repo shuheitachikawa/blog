@@ -2,23 +2,29 @@ import type { VFC } from "react";
 import { Post } from "src/types";
 import Link from "next/link";
 import dayjs from "dayjs";
+import Image from "next/image";
 
 type Props = {
   posts: Post[];
 };
 
-export const Posts: VFC<Props> = (props) => {
+export const Posts: VFC<Props> = ({ posts }) => {
   return (
     <ul>
-      {props.posts.map((blog) => (
+      {posts.map((blog) => (
         <li key={blog.id} className="select-none">
           <Link href={`/${blog.id}`}>
-            <div className="flex items-start sm:py-5 py-3 border-t border-sub hover:bg-sub transition cursor-pointer">
-              <div className="bg-sub rounded-md flex items-center justify-center sm:w-20 sm:h-20 h-16 w-16 min-w-max sm:mr-5 mr-3">
-                <p className="sm:text-5xl text-4xl">{blog.icon}</p>
+            <div className="sm:flex sm:items-center sm:py-5 py-3 px-2 sm:px-0 border-t border-sub hover:bg-sub transition cursor-pointer">
+              {/* PC画像 */}
+              <div className="hidden sm:block mr-4 min-w-listImage">
+                <Image src={blog.image.url} alt={blog.title} width={140} height={140 / 1.618} objectFit={"cover"} />
+              </div>
+              {/* SP画像 */}
+              <div className="sm:hidden">
+                <Image src={blog.image.url} alt={blog.title} width={500} height={500 / 1.618} objectFit={"cover"} />
               </div>
               <div className="flex flex-col">
-                <h3 className="sm:text-2xl text-md font-bold mb-1">{blog.title}</h3>
+                <h3 className="sm:text-xl text-md font-bold mb-1">{blog.title}</h3>
                 <div className="sm:block flex items-center">
                   <time className="sm:text-sm text-xs text-lightBlue sm:mb-1 mr-2">
                     {dayjs(blog.publishedAt).format("YYYY.MM.DD")}

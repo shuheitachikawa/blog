@@ -9,21 +9,23 @@ export const Aside: VFC = () => {
         <Icon size={70} href="/cat.jpg" />
         <h2 className="text-xl ml-3 font-bold">Bubekiti</h2>
       </div>
-      <p className="text-sm leading-5 mb-4">
-        Webエンジニアです。作ることが好きです。
+      <p className="text-sm leading-5 mb-6">
+        都内のWebエンジニアです。<br />
+        Saas企業のフロントエンドエンジニアをしつつ、スタートアップのお手伝いや、個人開発をしたりしています。<br />
+        食べることが好きです。
       </p>
       <div className="flex justify-center">
-        {/* <div className="w-10 mr-6">
+        <div className="w-8 mr-6">
           <a href="https://twitter.com/bubekiti" target="_blank" aria-label="Twitterへ" rel="noopener">
             <FontAwesomeIcon icon={["fab", "twitter"]} />
           </a>
-        </div> */}
-        <div className="w-10 mr-6">
+        </div>
+        <div className="w-8 mr-6">
           <a href="https://www.instagram.com/bubekiti" target="_blank" aria-label="Twitterへ" rel="noopener">
             <FontAwesomeIcon icon={["fab", "instagram"]} />
           </a>
         </div>
-        <div className="w-10">
+        <div className="w-8">
           <a href="https://github.com/shuheitachikawa" target="_blank" aria-label="GitHubへ" rel="noopener">
             <FontAwesomeIcon icon={["fab", "github"]} />
           </a>

@@ -36,6 +36,9 @@ module.exports = {
       main: "722px",
       aside: "290px",
     },
+    minWidth: {
+      listImage: '140px'
+    }
   },
   variants: {
     extend: {},

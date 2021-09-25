@@ -5,6 +5,7 @@ import { axiosInstance } from "src/lib/api";
 import { Layout } from "src/components/layout";
 import dayjs from "dayjs";
 import Head from "src/components/head";
+import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -24,12 +25,10 @@ const BlogId: NextPage<Props> = ({ post }) => {
       />
       <Layout>
         <div className="max-w-main bg-white text-black sm:rounded-md overflow-hidden">
-          <div className="sm:h-60 h-40">
-            <div className={styles.postBg}>
-              <p className="sm:text-8xl text-7xl">{post.icon}</p>
-            </div>
+          <div>
+            <Image src={post.image.url} alt={post.title} width={800} height={800 / 1.618} objectFit={"cover"} />
           </div>
-          <div className="sm:py-7 sm:px-10 py-8 px-5">
+          <div className="sm:py-7 sm:px-8 py-8 px-5">
             <time className="text-sm text-sub">{dayjs(post.publishedAt).format("YYYY.MM.DD")}</time>
             <h1 className="sm:text-3xl text-2xl font-bold mt-2 sm:mb-3 mb-2">{post.title}</h1>
             <div className="mb-6 text-white">
