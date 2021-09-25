@@ -3,10 +3,10 @@ import styles from "styles/Home.module.scss";
 import { Post } from "types";
 import { axiosInstance } from "lib/api";
 import { Layout } from "components/Layout";
+import { Share } from "components/Share";
 import dayjs from "dayjs";
-import Head from "components/Head";
+import { HeadComponent } from "components/HeadComponent";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import cheerio from "cheerio";
 import hljs from "highlight.js";
 import "highlight.js/styles/night-owl.css";
@@ -14,12 +14,11 @@ import "highlight.js/styles/night-owl.css";
 const BlogId: NextPage = ({ post, highlightedBody }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
-      <Head
+      <HeadComponent
         title={post.title}
         description={post.description}
-        keyword={`Bubekiti PiTARI ${post.title} ${post.description}`}
-        image={"https://bubekiti.com/cat.jpg"}
-        url={`https://bubekiti.com/${post.id}`}
+        imageUrl={post.image.url}
+        urlPath={`/${post.id}`}
       />
       <Layout>
         <div className="max-w-main bg-white text-black sm:rounded-md overflow-hidden">
@@ -44,29 +43,7 @@ const BlogId: NextPage = ({ post, highlightedBody }: InferGetStaticPropsType<typ
               }}
             />
           </div>
-          <div className="my-10">
-            <p className="text-center font-bold mb-2">SHARE</p>
-            <div className="flex justify-center">
-              <div className="w-10 mr-6">
-                <a
-                  href={`https://twitter.com/intent/tweet?url=https://bubekiti.com/${post.id}`}
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <FontAwesomeIcon icon={["fab", "twitter"]} />
-                </a>
-              </div>
-              <div className="w-10">
-                <a
-                  href={`https://www.facebook.com/sharer/sharer.php?u=https://bubekiti.com/${post.id}`}
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <FontAwesomeIcon icon={["fab", "facebook"]} />
-                </a>
-              </div>
-            </div>
-          </div>
+          <Share postId={post.id} />
         </div>
       </Layout>
     </>

@@ -3,7 +3,7 @@ import { axiosInstance } from "lib/api";
 import { Post } from "types";
 import { Layout } from "components/Layout";
 import { Posts } from "components/Posts";
-import Head from "components/Head";
+import { HeadComponent } from "components/HeadComponent";
 
 type Props = {
   posts: Post[];
@@ -12,12 +12,11 @@ type Props = {
 const Home: NextPage<Props> = ({ posts }) => {
   return (
     <>
-      <Head
+      <HeadComponent
         title={"Bubekiti Blog"}
         description={"Bubekitiのブログ。フロントエンドメインのエンジニア。PiTARI(ピタリ)を開発中。"}
-        keyword={"Bubekiti PiTARI"}
-        image={"/cat.jpg"}
-        url={"https://bubekiti.com"}
+        imageUrl={"/cat.jpg"}
+        urlPath={"https://bubekiti.com"}
       />
       <Layout>
         <div className="text-white max-w-main">
