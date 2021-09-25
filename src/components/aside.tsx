@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon } from "components/Icon";
+import { Icon } from "src/components/Icon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const links = [
