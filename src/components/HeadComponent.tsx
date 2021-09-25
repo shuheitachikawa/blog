@@ -16,7 +16,7 @@ export const HeadComponent: VFC<Props> = ({
   imageUrl,
   urlPath,
 }) => {
-  const url = `https://piknow.me${urlPath}`;
+  const url = `https://bubekiti.com${urlPath}`;
   return (
     <Head>
       <meta name="twitter:card" content="summary_large_image" />
@@ -36,17 +36,17 @@ export const HeadComponent: VFC<Props> = ({
       <link
         rel="icon"
         type="image/png"
-        href={"https://piknow.me/images/favicon.png"}
+        href={"https://bubekiti.com/cat.jpg"}
       />
       <link
         rel="shortcut icon"
         type="image/png"
-        href={"https://piknow.me/images/touch_icon.png"}
+        href={"https://bubekiti.com/cat.jpg"}
       />
       <link
         rel="apple-touch-icon-precomposed"
         type="image/png"
-        href={"https://piknow.me/images/touch_icon.png"}
+        href={"https://bubekiti.com/cat.jpg"}
       />
     </Head>
   );
