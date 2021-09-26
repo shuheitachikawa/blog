@@ -16,7 +16,7 @@ const Home: NextPage<Props> = ({ posts }) => {
       <Layout>
         <div className="text-white max-w-main">
           <div className="mx-4">
-            <h2 className="text-lightBlue text-2xl font-bold mb-4">New Posts</h2>
+            <h1 className="text-lightBlue text-2xl font-bold mb-4">New Posts</h1>
             <Posts posts={posts} />
           </div>
         </div>
