@@ -12,12 +12,7 @@ type Props = {
 const Home: NextPage<Props> = ({ posts }) => {
   return (
     <>
-      <HeadComponent
-        title={"Bubekiti Blog"}
-        description={"Bubekitiのブログ。フロントエンドメインのエンジニア。PiTARI(ピタリ)を開発中。"}
-        imageUrl={"/cat.jpg"}
-        urlPath={"https://bubekiti.com"}
-      />
+      <HeadComponent />
       <Layout>
         <div className="text-white max-w-main">
           <div className="mx-4">
@@ -32,7 +27,7 @@ const Home: NextPage<Props> = ({ posts }) => {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  const { data } = await axiosInstance.get(`${process.env.MICROCMS_BASE_URL}/blog?filters=category[contains]LIFE`);
+  const { data } = await axiosInstance.get(`${process.env.micro_cms_base_url}/blog?filters=category[contains]LIFE`);
   const posts: Post[] = await data.contents;
   return {
     props: {

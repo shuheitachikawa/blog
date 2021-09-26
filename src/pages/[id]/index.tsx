@@ -52,7 +52,7 @@ const BlogId: NextPage = ({ post, highlightedBody }: InferGetStaticPropsType<typ
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
-  const { data } = await axiosInstance.get(`${process.env.MICROCMS_BASE_URL}/blog`);
+  const { data } = await axiosInstance.get(`${process.env.micro_cms_base_url}/blog`);
   const paths = data.contents.map((content: Post) => `/${content.id}`);
   return { paths, fallback: false };
 };
@@ -60,7 +60,7 @@ export const getStaticPaths = async () => {
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const id = params!.id;
-  const { data } = await axiosInstance.get(`${process.env.MICROCMS_BASE_URL}/blog/${id}`);
+  const { data } = await axiosInstance.get(`${process.env.micro_cms_base_url}/blog/${id}`);
   const post: Post = await data;
 
   const $ = cheerio.load(post.content);

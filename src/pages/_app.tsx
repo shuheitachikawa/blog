@@ -13,7 +13,6 @@ function MyApp(props: AppProps) {
   return (
     <>
       <Head>
-        <title>Bubekiti Blog</title>
         <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet" />
       </Head>
       <props.Component {...props.pageProps} />

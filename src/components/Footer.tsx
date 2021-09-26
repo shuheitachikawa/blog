@@ -1,6 +1,6 @@
-import type { VFC } from "react";
+import React from "react";
 
-export const Footer: VFC = () => {
+export const Footer: React.FC = () => {
   return (
     <footer>
       <div className="max-w-layout mx-auto border-t border-sub text-center py-4">

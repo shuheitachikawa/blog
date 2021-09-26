@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { VFC } from "react";
+import React from "react";
 import { useRouter } from "next/router";
 import { Category } from "types";
 import styled, { keyframes } from "styled-components";
@@ -34,14 +34,33 @@ const Circle = styled.div`
 `;
 
 const categories: Category[] = [
-  { href: "/", name: "/new.png", text: "NEW", color: "text-main", bg: "bg-mainl" },
-  { href: "/dev", name: "/dev.png", text: "DEV", color: "text-dev", bg: "bg-devl" },
-  { href: "/life", name: "/life.png", text: "LIFE", color: "text-life", bg: "bg-lifel" },
+  {
+    href: "/",
+    name: "/new.png",
+    text: "NEW",
+    color: "text-main",
+    bg: "bg-mainl"
+  },
+  {
+    href: "/dev",
+    name: "/dev.png",
+    text: "DEV",
+    color: "text-dev",
+    bg: "bg-devl"
+  },
+  {
+    href: "/life",
+    name: "/life.png",
+    text: "LIFE",
+    color: "text-life",
+    bg: "bg-lifel"
+  },
 ];
 
-export const Categories: VFC = () => {
+export const Categories: React.FC = () => {
   const router = useRouter();
   const routeName = router.pathname;
+
   return (
     <>
       <div className="flex sm:mb-8 sm:mt-0 mb-4 mt-4 px-4">

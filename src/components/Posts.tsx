@@ -1,4 +1,4 @@
-import type { VFC } from "react";
+import React from "react";
 import { Post } from "types";
 import Link from "next/link";
 import dayjs from "dayjs";
@@ -8,7 +8,7 @@ type Props = {
   posts: Post[];
 };
 
-export const Posts: VFC<Props> = ({ posts }) => {
+export const Posts: React.FC<Props> = ({ posts }) => {
   return (
     <ul>
       {posts.map((blog) => (

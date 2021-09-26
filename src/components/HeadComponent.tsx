@@ -1,20 +1,20 @@
-import type { VFC } from "react";
+import React from "react";
 import Head from "next/head";
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
   keyword?: string;
   imageUrl?: string;
   urlPath?: string;
 }
 
-export const HeadComponent: VFC<Props> = ({
-  title,
-  description = "",
+export const HeadComponent: React.FC<Props> = ({
+  title = "bubekiti blog",
+  description = "Bubekitiのブログ。都内のエンジニアです。学んだこと、気づいたことを書いています。",
   keyword,
-  imageUrl,
-  urlPath,
+  imageUrl = "/cat.jpg",
+  urlPath = "https://bubekiti.com",
 }) => {
   const url = `https://bubekiti.com${urlPath}`;
   return (
@@ -33,21 +33,9 @@ export const HeadComponent: VFC<Props> = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
       <link rel="canonical" href={url} />
-      <link
-        rel="icon"
-        type="image/png"
-        href={"https://bubekiti.com/cat.jpg"}
-      />
-      <link
-        rel="shortcut icon"
-        type="image/png"
-        href={"https://bubekiti.com/cat.jpg"}
-      />
-      <link
-        rel="apple-touch-icon-precomposed"
-        type="image/png"
-        href={"https://bubekiti.com/cat.jpg"}
-      />
+      <link rel="icon" type="image/png" href={"https://bubekiti.com/cat.jpg"} />
+      <link rel="shortcut icon" type="image/png" href={"https://bubekiti.com/cat.jpg"} />
+      <link rel="apple-touch-icon-precomposed" type="image/png" href={"https://bubekiti.com/cat.jpg"} />
     </Head>
   );
 };
