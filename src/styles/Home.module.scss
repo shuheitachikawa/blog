@@ -2,14 +2,27 @@
   & > h2 {
     font-size: 24px;
     font-weight: bold;
-    margin: 40px 0 16px;
+    margin: 48px 0 16px;
     border-bottom: 1px solid #ddd;
   }
 
   & > h3 {
     font-size: 18px;
     font-weight: bold;
-    margin: 16px 0;
+    margin: 32px 0 8px;
+    padding-left: 16px;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: rgba(40, 41, 74);
+      height: 22px;
+      width: 4px;
+      border-radius: 3px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   & > p {
@@ -30,12 +43,13 @@
   }
 
   & > ol {
-    padding-left: 0;
+    padding-left: 8px;
     counter-reset: number;
-    margin: 24px 0;
+    margin: 16px 0;
   }
   & > ul {
-    padding-left: 0;
+    padding-left: 8px;
+    margin: 16px 0;
   }
   & > ol > li {
     position: relative;
@@ -68,9 +82,9 @@
       display: inline-block;
       position: absolute;
       left: 4px;
-      top: 8px;
-      width: 8px;
-      height: 8px;
+      top: 9px;
+      width: 6px;
+      height: 6px;
       line-height: 22px;
       border-radius: 50%;
       background-color: #28294a;
@@ -78,8 +92,8 @@
   }
   // 折り返し表示するには以下をON
   // pre {
-    // word-break: break-all;
-    // white-space: pre-wrap;
+  // word-break: break-all;
+  // white-space: pre-wrap;
   // }
   code {
     border-radius: 4px;
