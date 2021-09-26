@@ -76,10 +76,11 @@
       background-color: #28294a;
     }
   }
-  pre {
-    word-break: break-all;
-    white-space: pre-wrap;
-  }
+  // 折り返し表示するには以下をON
+  // pre {
+    // word-break: break-all;
+    // white-space: pre-wrap;
+  // }
   code {
     border-radius: 4px;
     font-size: 14px;
