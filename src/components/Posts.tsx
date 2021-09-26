@@ -24,7 +24,7 @@ export const Posts: React.FC<Props> = ({ posts }) => {
                 <Image src={`${blog.image.url}`} alt={blog.title} width={500} height={500 / 1.618} objectFit={"cover"} />
               </div>
               <div className="flex flex-col">
-                <h3 className="sm:text-xl text-md font-bold mb-1">{blog.title}</h3>
+                <h2 className="sm:text-xl text-md font-bold mb-1">{blog.title}</h2>
                 <div className="sm:block flex items-center">
                   <time className="sm:text-sm text-xs text-lightBlue sm:mb-1 mr-2">
                     {dayjs(blog.publishedAt).format("YYYY.MM.DD")}
