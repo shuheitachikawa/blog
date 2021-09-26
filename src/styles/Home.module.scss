@@ -36,10 +36,11 @@
       }
     }
     & code {
-      background-color: #bbdefb;
+      background-color: #e3f2fd;
       padding: 2px 4px;
       margin: 0 4px;
       border-radius: 4px;
+      font-size: 14px;
     }
   }
 
@@ -54,10 +55,24 @@
     padding-left: 8px;
     counter-reset: number;
     margin: 16px 0;
+    & code {
+      background-color: #e3f2fd;
+      padding: 2px 4px;
+      margin: 0 4px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
   }
   & > ul {
     padding-left: 8px;
     margin: 16px 0;
+    & code {
+      background-color: #e3f2fd;
+      padding: 2px 4px;
+      margin: 0 4px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
   }
   & > ol > li {
     position: relative;
