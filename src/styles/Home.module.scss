@@ -29,17 +29,25 @@
     line-height: 1.8;
     letter-spacing: 0.2px;
     & a {
-      color: #ff844d;
+      color: #28294a;
+      font-weight: bold;
       &:hover {
         text-decoration: underline;
       }
+    }
+    & code {
+      background-color: #bbdefb;
+      padding: 2px 4px;
+      margin: 0 4px;
+      border-radius: 4px;
     }
   }
 
   & > a {
     line-height: 1.8;
     letter-spacing: 0.2px;
-    color: #ff844d;
+    color: #28294a;
+    font-weight: bold;
   }
 
   & > ol {
@@ -90,14 +98,15 @@
       background-color: #28294a;
     }
   }
-  // 折り返し表示するには以下をON
-  // pre {
-  // word-break: break-all;
-  // white-space: pre-wrap;
-  // }
-  code {
-    border-radius: 4px;
-    font-size: 14px;
+  pre {
+    margin: 16px 0;
+    // 折り返し表示するには以下をON
+    // word-break: break-all;
+    // white-space: pre-wrap;
+    code {
+      border-radius: 4px;
+      font-size: 14px;
+    }
   }
 }
 

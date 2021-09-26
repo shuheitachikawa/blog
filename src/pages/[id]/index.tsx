@@ -27,7 +27,7 @@ const BlogId: NextPage = ({ post, highlightedBody }: InferGetStaticPropsType<typ
           </div>
           <div className="sm:py-7 sm:px-5 py-8 px-4">
             <time className="text-sm text-sub">{dayjs(post.publishedAt).format("YYYY.MM.DD")}</time>
-            <h1 className="sm:text-3xl text-2xl font-bold mt-2 sm:mb-3 mb-2">{post.title}</h1>
+            <h1 className="sm:text-3xl text-2xl font-bold mt-2 sm:mb-3 mb-2 leading-10">{post.title}</h1>
             <div className="mb-6 text-white">
               {post.category[0] === "DEV" && (
                 <span className="text-xs py-1 px-2 bg-dev rounded-md">{post.category}</span>
