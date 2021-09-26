@@ -17,11 +17,11 @@ export const Posts: React.FC<Props> = ({ posts }) => {
             <div className="sm:flex sm:items-center sm:py-5 py-3 px-2 sm:px-0 ">
               {/* PC画像 */}
               <div className="hidden sm:flex mr-4 min-w-listImage items-center">
-                <Image src={blog.image.url} alt={blog.title} width={140} height={140 / 1.618} objectFit={"cover"} />
+                <Image src={`${blog.image.url}`} alt={blog.title} width={140} height={140 / 1.618} objectFit={"cover"} />
               </div>
               {/* SP画像 */}
               <div className="sm:hidden">
-                <Image src={blog.image.url} alt={blog.title} width={500} height={500 / 1.618} objectFit={"cover"} />
+                <Image src={`${blog.image.url}`} alt={blog.title} width={500} height={500 / 1.618} objectFit={"cover"} />
               </div>
               <div className="flex flex-col">
                 <h3 className="sm:text-xl text-md font-bold mb-1">{blog.title}</h3>
