@@ -14,7 +14,7 @@ export const Posts: React.FC<Props> = ({ posts }) => {
       {posts.map((blog) => (
         <li key={blog.id} className="select-none border-t border-sub hover:bg-sub transition cursor-pointer mb-5 sm:mb-0">
           <Link href={`/${blog.id}`}>
-            <div className="sm:flex sm:items-center sm:py-5 py-3 px-2 sm:px-0 sm:pl-4">
+            <div className="sm:flex sm:items-center sm:py-5 py-3 px-2 sm:px-0 sm:pl-4 ">
               {/* PC画像 */}
               <div className="hidden sm:flex mr-4 min-w-listImage items-center">
                 <Image src={`${blog.image.url}`} alt={blog.title} width={140} height={140 / 1.618} objectFit={"cover"} />
