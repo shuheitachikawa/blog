@@ -1,49 +1,13 @@
 import React from "react";
-import { Icon } from "components/Icon";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-const links = [
-  {
-    name: "twitter",
-    href: "https://twitter.com/bubekiti",
-  },
-  {
-    name: "instagram",
-    href: "https://www.instagram.com/bubekiti",
-  },
-  {
-    name: "github",
-    href: "https://github.com/shuheitachikawa",
-  },
-];
+import { AboutMe } from "components/AboutMe";
 
 export const Aside: React.FC = () => {
   return (
-    <aside className="bg-sub text-white shadow-lg rounded-md p-6 sm:max-w-aside sticky top-8 mt-10 sm:mt-0 mx-4">
-      <div className="">
-        <div className="flex items-center mb-4">
-          <Icon size={70} href="/cat.jpg" />
-          <h2 className="text-xl ml-3 font-bold">Bubekiti</h2>
-        </div>
-        <p className="text-sm leading-5 mb-6">
-          都内のWebエンジニアです。
-          <br />
-          Saas企業のフロントエンドエンジニアをしつつ、スタートアップのお手伝いや、個人開発をしたりしています。
-          <br />
-          食べることが好きです。
-        </p>
-        <div className="flex justify-center">
-          {links.map((link) => {
-            return (
-              <div key={link.name} className="mr-6 last:mr-0">
-                <a href={link.href} target="_blank" aria-label={`${link.name}へ`} rel="noopener">
-                  <FontAwesomeIcon icon={["fab", link.name as any]} width={26} />
-                </a>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+    <aside className="sm:max-w-aside sticky top-8 mt-10 sm:mt-0 mx-4">
+      <AboutMe />
+      <a href="https://pitari.me" target="_blank" aria-label="PiTARI" rel="noopener">
+        <img src="/pitari.jpg" alt="PiTARI.me" title="個人開発品のPiTARIです" className="rounded shadow-lg" />
+      </a>
     </aside>
   );
 };
